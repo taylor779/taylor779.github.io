@@ -24,14 +24,14 @@
   <p class="lead">It's a film look made in Filmaholic, the film camera and darkroom for iPhone. Open it in Filmaholic
   to see it on your own photos, add it to your films and shoot with it.</p>
   <div class="actions">
-    <a class="btn primary" id="open" href="https://apps.apple.com/app/id6812179399">Open in Filmaholic</a>
-    <a class="btn" href="https://apps.apple.com/app/id6812179399">Get Filmaholic</a>
+    <a class="btn primary" href="https://apps.apple.com/app/id6812179399">Get Filmaholic</a>
+    <a class="btn" id="open" href="https://apps.apple.com/app/id6812179399">Open in Filmaholic</a>
   </div>
   <p class="foot"><a href="/filmaholic/">About Filmaholic</a> · <a href="/filmaholic/privacy.html">Privacy policy</a></p>
 </main>
 <script>
-  // With the app installed this page never shows: iOS opens the link in the app. Here (another browser, or the app
-  // not installed), Open tries the app's own link and the App Store is the fallback.
+  // With the app installed this page never shows: iOS opens the link in the app. Here (another browser, or the link
+  // opened from a page in Safari), Open tries the app's own link; without the app, Get Filmaholic is the way in.
   var id = (new URLSearchParams(location.search).get('id') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 80);
   if (id) document.getElementById('open').href = 'filmaholic://stock/' + id;
 </script>
