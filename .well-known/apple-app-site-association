@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["G3F945D68H.com.taylorwilson.remjet"],
+        "components": [
+          { "/": "/s/", "?": { "id": "?*" }, "comment": "A shared Filmaholic stock" },
+          { "/": "/s", "?": { "id": "?*" } }
+        ]
+      }
+    ]
+  },
+  "appclips": {
+    "apps": ["G3F945D68H.com.taylorwilson.remjet.Clip"]
+  }
+}

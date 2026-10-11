@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Filmaholic film stock</title>
+<meta name="description" content="Someone shared a film look made in Filmaholic, the film camera and darkroom for iPhone.">
+<!-- Without the app: Safari offers the App Clip, which shows this stock on your own photo -->
+<meta name="apple-itunes-app" content="app-id=6812179399, app-clip-bundle-id=com.taylorwilson.remjet.Clip, app-clip-display=card">
+<meta property="og:title" content="A Filmaholic film stock">
+<meta property="og:description" content="Try this film look on your own photos with Filmaholic.">
+<link rel="stylesheet" href="/filmaholic/style.css">
+<style>
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+  .btn { display: inline-block; padding: 13px 20px; border-radius: 8px; border: 1px solid var(--accent);
+    color: var(--accent); text-decoration: none; font-weight: 600; letter-spacing: 0.04em; }
+  .btn.primary { background: var(--accent); color: var(--ink); }
+</style>
+</head>
+<body>
+<main>
+  <p class="mark"><a href="/filmaholic/">Filmaholic</a></p>
+  <h1>Someone shared a film stock with you</h1>
+  <p class="lead">It's a film look made in Filmaholic, the film camera and darkroom for iPhone. Open it in Filmaholic
+  to see it on your own photos, add it to your films and shoot with it.</p>
+  <div class="actions">
+    <a class="btn primary" id="open" href="https://apps.apple.com/app/id6812179399">Open in Filmaholic</a>
+    <a class="btn" href="https://apps.apple.com/app/id6812179399">Get Filmaholic</a>
+  </div>
+  <p class="foot"><a href="/filmaholic/">About Filmaholic</a> · <a href="/filmaholic/privacy.html">Privacy policy</a></p>
+</main>
+<script>
+  // With the app installed this page never shows: iOS opens the link in the app. Here (another browser, or the app
+  // not installed), Open tries the app's own link and the App Store is the fallback.
+  var id = (new URLSearchParams(location.search).get('id') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 80);
+  if (id) document.getElementById('open').href = 'filmaholic://stock/' + id;
+</script>
+</body>
+</html>
